@@ -1,0 +1,27 @@
+.partners {
+  position: relative;
+  z-index: 3;
+  
+  &__wrapper {
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__image {
+    z-index: 2;
+  }
+  
+  ::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    width: 98.7vw;
+    height: 6px;
+    background: #732F20;
+    z-index: 1;
+  }
+}

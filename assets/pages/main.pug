@@ -1,0 +1,208 @@
+extends ../templates/base
+
+block content
+  include ../modules/splash-screen/module
+
+  .service-block
+    .wrapper.service-block__wrapper
+      h3.title Наши услуги
+
+      .service-block__services
+        .service-block__service-wrapper
+          .service-block__service
+            -
+              var service = {
+                image: "./img/Statuette1.png",
+                name: "Смм продвижение",
+                number: 1
+              }
+            include ../modules/service/module
+
+        .service-block__service-wrapper
+          .service-block__service
+            -
+              var service = {
+                image: "./img/Statuette2.png",
+                name: "СТРАТЕГИЯ + ТАРГЕТ",
+                number: 2
+              }
+            include ../modules/service/module
+
+        .service-block__service-wrapper
+          .service-block__service
+            -
+              var service = {
+                image: "./img/Statuette3.png",
+                name: "Услуги студии",
+                number: 3
+              }
+            include ../modules/service/module
+
+        .service-block__service-wrapper
+          .service-block__service
+            -
+              var service = {
+                image: "./img/Statuette4.png",
+                name: "Разработка сайтов",
+                number: 4
+              }
+            include ../modules/service/module
+
+        .service-block__service-wrapper
+          .service-block__service
+            -
+              var service = {
+                image: "./img/Statuette5.png",
+                name: "Организация ивентов",
+                explanation: `
+                  совместно с нашим партнером 
+                  PapaTomas*
+                `,
+                number: 5
+              }
+            include ../modules/service/module
+
+        .service-block__service-wrapper
+          .service-block__service
+            -
+              var service = {
+                image: "./img/Statuette6.png",
+                name: "ui/ux дизайн",
+                number: 6
+              }
+            include ../modules/service/module
+
+  -
+    var value = [
+      {
+        title: "дружба",
+        description: "Строим крепкие и взаимовыгодные отношения с клиентом."
+      },
+      {
+        title: "щедрость",
+        description: "проводим регулярные АКЦИИ, А ТАКЖЕ ДАРИМ ПОДАРКИ;"
+      },
+      {
+        title: "Понимание рынка",
+        description: "Ведем детальный анализ рынка и конкурентов;"
+      },
+      {
+        title: "польза обществу",
+        description: "помогаем выидти в digital и соответсвовать всем трендам современного интернета;"
+      }
+    ];
+  .principles
+    .wrapper.principles__wrapper
+      .title.principles__title наша работа основывается на 4 принципах
+      each item, i in value 
+        -
+          var principe = {
+            url: "img/group" + (i + 1) + ".svg",
+            title: item.title,
+            description: item.description
+          }
+        div.principles__item(class="principles__item--" + (i + 1))
+          include ../modules/principe/module
+      img.principles__image(src="img/group_image.png", alt="Error")
+
+  .rate-block
+    .wrapper.rate-block__wrapper
+      img.rate-block__image(src="./img/rate-image.png", alt="")
+      .rate-block__content
+        span.title.rate-block__title
+          | Не знаешь что выбрать?
+          br
+          | Есть решение!
+
+        .rate-block__rates
+          -
+            var rate = {
+              name: "basic",
+              description: `
+                Ведение соц. сетей (3-5 постов в неделю)
+
+                Разработка SMM стратегии + таргет
+
+                1 фотосессия в месяц
+              `,
+              target: "сделать первые шаги"
+            }
+          include ../modules/rate/module 
+          -
+            var rate = {
+              color: "yellow",
+              name: "standart",
+              description: `
+                Ведение соц. сетей (3-5 постов в неделю)
+
+                Разработка SMM стратегии + таргет
+
+                2 фотосессия в месяц
+
+                видео-контент
+
+                моушен-дизайн
+              `,
+              target: "перейти на новый уровень"
+            }
+          include ../modules/rate/module 
+          -
+            var rate = {
+              color: "black",
+              name: "premium",
+              description: `
+                Ведение соц. сетей (3-5 постов в неделю)
+
+                Разработка SMM стратегии + таргет
+
+                3 фотосессия в месяц
+
+                видео-контент
+
+                моушен-дизайн
+
+                Профессиональная видеосъемка
+              `,
+              target: "чтобы построить бренд"
+            }
+          include ../modules/rate/module
+        button.button.rate-block__button Получить прайс лист
+
+  .benefits
+    .wrapper.benefits__wrapper
+      .benefits__content
+        .title.benefits__title почему мы?
+        .benefits__benefit
+          -
+            var benefit = {
+              number: "I",
+              description: "Не просто ВЫПОЛНЯЕМ работу, а тщательно СЛЕДИМ за всем процессом;"
+            }
+          include ../modules/benefit/module
+          -
+            var benefit = {
+              number: "II",
+              description: "Партнерские соглашения с ВЕДУЩИМИ компаниями казахстанского рынка;"
+            }
+          include ../modules/benefit/module
+          -
+            var benefit = {
+              number: "III",
+              description: "Широкая БАЗА УСЛУГ, специально подобранная под ВАШУ специфику бизнеса."
+            }
+          include ../modules/benefit/module
+        img.benefits__image(src="img/statue.png", alt="Error")
+
+  .partners-block
+    .partners-block__content
+      .title наши партнеры
+      include ../modules/partners/modyle
+      img.partners-block__image(src="img/image4.png", alt="")
+    
+  include ../modules/order-consultation/module
+
+  mixin link(link)
+    a.rectangle__link(href= link)
+  .rectangle
+    +link("#")
+    +link("#")

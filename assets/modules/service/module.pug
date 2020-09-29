@@ -1,0 +1,7 @@
+.service
+  img.service__image(src= service.image, alt="")
+  .service__border
+    .service__info
+      p.service__name= service.name
+      p.service__explanation= service.explanation
+      img.service__number(src="./img/Number" + service.number + ".png", class="service__number--" + service.number, alt="")

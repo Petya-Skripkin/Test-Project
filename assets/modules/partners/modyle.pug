@@ -1,0 +1,6 @@
+- var images = ["one-partner", "two-partner", "three-partner", "four-partner"]
+
+.partners
+  .wrapper.partners__wrapper
+    each image in images
+      img.partners__image(src= "img/" + image + ".svg", alt="Error")
